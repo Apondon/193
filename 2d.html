@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding: 0;}
+        html,body{width: 100%;height: 100%;overflow: hidden;position: relative;}
+        .div1{
+            width: 100px;
+            height: 100px;
+            background: darkcyan;
+            /* 位移 translate(x,y)*/
+            /* transform: translate(100px,50px); */
+            /* 缩放 transform: scale(x,y) 0-1之间的数字为缩小，大于1的数字为放大*/
+            /* transform: scale(.5,.5); */
+            /* 旋转  transform: rotate(deg) */
+            /* transform: rotate(45deg); */
+            /* 倾斜 transform: skew(xdeg,ydeg)*/
+            transform: skew(45deg);
+        }
+        .div2{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 500px;
+            height: 300px;
+            background: darkmagenta;
+            transform: translate(-250px,-150px);
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="div1"> 111111 </div> -->
+    <div class="div2"></div>
+</body>
+</html>
