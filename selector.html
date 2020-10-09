@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* id */
+        #div1{width: 100px; height: 100px;}
+        /* class */
+        .div1{color:red}
+        .div11{border:1px solid #0f0;}
+        /* 子类 */
+        .div111 span{ color:chartreuse;} 
+        /* 相邻兄弟 */
+        div + span{ color: cornflowerblue; }
+        /* 范围选择器 */
+        /* .span1 ~ p{ color:gold; } */
+        /* 组选择器 */
+        .div1 , .span1 , .p1{ font-size: 60px; }
+        /* 属性选择器 权重低*/
+        [abc="abc"]{ color: greenyellow; }
+        /* 从开始位置匹配属性值 */
+        [abc^="abc"]{ color: purple;}
+        /* 从结束位置匹配属性值 */
+        [abc$="abc"]{ color: pink;}
+        /* 从中间位置匹配属性值 */
+        [abc*="bca"]{color: yellow;}
+        /* 伪类 */
+        h1:hover{background: tomato;}
+        h1:active{background: turquoise;}
+        /* before 之前 after 之后 */
+        h1::before{ content: '我在前面'; }
+        h1::after{ content: '我在后面'; }
+        /* selection */
+        h2::selection{background: black;}
+        /* 选中元素中的第一个字符 */
+        h2::first-letter{
+            font-size: 50px;
+            background: blanchedalmond;
+            border-radius: 100%;
+            padding: 5px;
+        }
+        /* 修改表单元素中的提示语 */
+        input::-webkit-input-placeholder{
+            color:cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>我是h1</h1>
+    <h2>我是h2</h2>
+    <div id="div1" class="div1 div11 div111">
+        1
+        <span>
+            2
+        </span>
+    </div>
+    <span class="span1">3</span>
+    <p class="p1">4</p>
+    <p class="p2">5</p>
+    <p class="p3">6</p>
+    <p abc="abc">7</p>
+    <p abc="abcabc">8</p>
+    <p abc="abccba">9</p>
+
+    <input type="text" placeholder="请输入内容">
+</body>
+</html>

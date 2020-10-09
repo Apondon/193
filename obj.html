@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    // 工厂模式
+    function gongchang (yuanliao1,yuanliao2) {
+        // var o = {} //字面量
+        var o = new Object() // new 操作符生成实例
+        o.y1 = yuanliao1
+        o.y2 = yuanliao2
+        return o
+    }
+    */
+
+    // 构造函数模式
+    /*
+    function Person (name,age){
+        this.name = name
+        this.age = age
+        // 使用该方式绑定的方法，在每个对象的实例中是私有的
+        this.fn = function(){
+            console.log(name)
+        }
+    }
+    // 将Person对象进行实例化  p1和p2 都是 Person 对象的实例
+    var p1 = new Person('张三' , 18)
+    var p2 = new Person('张四' , 19)
+
+    p1.fn == p2.fn   // false  实例的fn方法私有
+    */
+
+    /*
+    // 有公有方法的构造函数
+    function Person (name,age){
+        this.name = name
+        this.age = age
+        // 使用该方式绑定的方法，在每个对象的实例中共享
+        this.fn = fn
+    }
+    function fn (name){
+        console.log(name)
+    }
+    // 将Person对象进行实例化  p1和p2 都是 Person 对象的实例
+    var p1 = new Person('张三' , 18)
+    var p2 = new Person('张四' , 19)
+
+    p1.fn == p2.fn   //  true  实例的fn方法公有
+    */
+
+    /*
+    // 有默认值的构造函数
+    function Person (name,age){
+        // 若在对 Person 对象进行实例化时不传实参，则 实参的值默认为undefined
+        if( name === undefined) this.name = '没名字';
+        else this.name = name;
+        if(age === undefined) this.age = 0;
+        else this.age = age;
+    }
+    */
+
+    /*
+    // 原型模式  原型模式中所有属性与方法都是实例公有的  实例不可以修改原型的属性和方法
+    function Person () {
+        Person.prototype.name = '我是原型模式'
+        Person.prototype.fn = function(){
+            console.log('我是原型模式')
+        }
+    }
+    // 对 Person 对象进行实例化
+    var p1 = new Person()
+    var p2 = new Person()
+
+    // 查找原型属性
+    // p1.name // "我是原型模式"
+    // p2.name // "我是原型模式"
+    // 实例p1将name属性私有化
+    // p1.name = '我是P1'
+    // p1 // {name: "我是P1"}
+    // p2.name // "我是原型模式"
+    // var p3 = new Person()
+    // p3.name // "我是原型模式"
+    // p1.fn == p2.fn // true  实例共享原型方法
+    
+    // 修改对象的原型属性
+    // Person.prototype.name = '我变了'
+    // p2 p3 属性未私有化，所以受原型属性影响 p1 则不受影响
+    // p2.name // "我变了"
+    // p3.name // "我变了"
+    // p1.name // "我是P1"
+    */
+
+    // 混合模式
+    function Mixin (name,age){
+        // 私有属性
+        this.name = name
+        this.age = age
+        // 私有方法
+        this.sayBye = function(){
+            console.log('bye')
+        }
+        // 公有属性
+        Mixin.prototype.job = 'student'
+        // 公共方法
+        Mixin.prototype.sayHi = function(){
+            console.log('hi')
+        }
+    }
+    // 实例化对象
+    var m1 = new Mixin('阿大',10)
+    var m2 = new Mixin('阿二',9)
+
+    // m1 和 m2 的私有属性与私有方法
+    // m1 // {name: "阿大", age: 10, sayBye: ƒ}
+    // m2 // {name: "阿二", age: 9, sayBye: ƒ}
+
+    // m1 和 m2 的公有属性与公有方法
+    // m1.job // "student"
+    // m2.job // "student"
+    
+    // m1.sayBye == m2.sayBye // false  sayBye是实例的私有方法
+    // m1.sayHi == m2.sayHi // true  sayHi是实例的公有方法
+    
+
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding: 0;}
+        div{
+            width: 100px;
+            height: 100px;
+            border-width: 100px;
+            border-style: solid;
+            border-color: transparent;
+            /* 引入作为边框的图片 */
+            border-image-source: url(./timg.jpg);
+            /* 将引入的图片进行切割 */
+            border-image-slice: 10 5 100 50;
+            /* 是否延边框外围填充 */
+            /* border-image-outset: 30px; */
+            /* 图片边框宽度 */
+            /* border-image-width: 5px; */
+        }
+        .div1{ border-image-repeat: repeat; }
+        .div2{ border-image-repeat: unset; }
+        .div3{ border-image-repeat: round; }
+        .div4{ border-image-repeat: space; }
+        .div5{ border-image-repeat: stretch; }
+    </style>
+</head>
+<body>
+    <div class="div1">111 repeat 1111</div>
+    <div class="div2">222 unset 2222</div>
+    <div class="div3">333 round 3333</div>
+    <div class="div4">444 space 4444</div>
+    <div class="div5">555 stretch 5555</div>
+
+</body>
+</html>

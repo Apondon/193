@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        html,body{ width: 100%;height: 100%;}
+        .screen{
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+
+
+            width: 300px;
+            height: 300px;
+            
+            transform:perspective(1000px) rotateX(55deg) rotateY(30deg) rotateZ(45deg);
+            transform-style: preserve-3d;
+
+            /*  transition: property duration timing-function delay; */
+            /*  transition: 过渡样式 持续时间 动效曲线 延迟时间; */
+            transition: all 1s ease 2s;
+
+            /* transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            transition-delay: 2s; */
+
+            border:1px solid;
+        }
+        .screen:hover{
+            width: 600px;
+            height: 600px;
+        }
+        .screen div{
+            width: 100px;
+            height: 100px;
+
+            box-shadow: 0px 0px 10px rgb(206, 72, 177);
+            color: #fff;
+            text-shadow: 0px 0px 10px rgb(97, 72, 206);
+            
+            font-size: 60px;
+            font-weight: normal;
+            line-height: 100px;
+            text-align: center;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .mian1{
+            transform: translateZ(50px);
+            transition: all 1s cubic-bezier(0,1.49,.99,.89) 2s;
+        }
+        .screen:hover .mian1{
+            transform: translateZ(150px) rotateZ(45deg);
+        }
+        .mian2{
+            transform: rotateX(90deg) translateZ(50px);
+            transition: all 1s cubic-bezier(.11,1.7,.07,1.41);
+        }
+        .screen:hover .mian2{
+            transform: rotateX(90deg) rotateZ(45deg) translateZ(150px);
+        }
+        .mian3{
+            transform: rotateX(180deg) translateZ(50px);
+            transition: all 1s cubic-bezier(.06,1.22,1,-0.78);
+        }
+        .screen:hover .mian3{
+            transform: rotateX(180deg) rotateZ(45deg) translateZ(150px);
+        }
+        .mian4{
+            transform: rotateX(-90deg) translateZ(50px);
+            transition: all 1s cubic-bezier(.9,.76,1,-0.78);
+        }
+        .screen:hover .mian4{
+            transform: rotateX(-90deg) rotateZ(-45deg) translateZ(150px);
+        }
+        .mian5{
+            transform: rotateY(90deg) translateZ(50px);
+            transition: all 1s cubic-bezier(.9,1.45,0,-0.82);
+        }
+        .screen:hover .mian5{
+            transform: rotateY(90deg) rotateZ(-45deg) translateZ(150px);
+        }
+        .mian6{
+            transform: rotateY(-90deg) translateZ(50px);
+            transition: all 1s cubic-bezier(.24,-0.66,.75,-0.77);
+        }
+        .screen:hover .mian6{
+            transform: rotateY(-90deg) rotateZ(45deg) translateZ(150px);
+        }
+    </style>
+</head>
+<body>
+    <div class="screen">
+        <div class="mian1">1</div>
+        <div class="mian2">2</div>
+        <div class="mian3">3</div>
+        <div class="mian4">4</div>
+        <div class="mian5">5</div>
+        <div class="mian6">6</div>
+    </div>
+</body>
+</html>

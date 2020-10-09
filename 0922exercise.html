@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    用户名  <input type="text" id="username" placeholder="请输入用户名">
+    <br>
+    密码  <input type="password"  id="password" placeholder="请输入密码">
+    <br>
+    手机号  <input type="text" id="mobile" placeholder="请输入手机号">
+    <br>
+    邮箱  <input type="text" id="email" placeholder="请输入邮箱">
+    <br>
+    qq   <input type="text" id="qq" placeholder="请输入qq">
+    <br>
+    主页  <input type="text" id="page" placeholder="请输入主页地址">
+    <br>
+    生日  <input type="date" id="birth">
+    <br>
+    照片上传  <input type="file">
+    <br>
+    <input type="button" value="验证" onclick="fn()">
+</body>
+<script>
+    function getId(id){
+        return document.getElementById(id)
+    }
+
+    function fn(){
+        
+        // 1.获取需要验证的值 
+        var un = getId('username').value
+        console.log(un)
+        var pd = getId('password').value
+        console.log(pd)
+        // 2.验证非空
+        if(!!un){
+            if(un.length<3) {
+                alert('用户名长度不能小于三位')
+            }
+        }else{
+            alert('用户名不能为空')
+        }
+    }
+
+</script>
+</html>

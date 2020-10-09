@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding: 0;}
+        html,body{width: 100%;height: 100%;}
+        /* 引入iconfont */
+        /* 引入字体文件 */
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./font/iconfont.eot');
+            src: url('./font/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('./font/iconfont.woff2') format('woff2'),
+                url('./font/iconfont.woff') format('woff'),
+                url('./font/iconfont.ttf') format('truetype'),
+                url('./font/iconfont.svg#iconfont') format('svg');
+        }
+        /* 定义使用iconfont的样式 */
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .warp{
+            /* 设置宽高 */
+            width: 100%;
+            height: 100%;
+            /* 父级元素使用flex */
+            display: flex;
+            /* 将子元素纵向排列 */
+            flex-direction: column;
+        }
+        /* 三个子元素进行空间分割 */
+        .hd{
+            width: 100%;
+            height: 1.375rem;
+            background: aqua;
+        }
+        .box{
+            width: 100%;
+            flex: 1;
+            overflow-y: auto;
+        }
+        .ft{
+            width: 100%;
+            height: 1.375rem;
+            background: tomato;
+
+            /* 使用flex */
+            display: flex;
+        }
+        .btn{
+            height: 100%;
+            /* 平分内容区域 */
+            flex:1;
+
+
+            /* 使用flex */
+            display: flex;
+            /* 将子元素纵向排列 */
+            flex-direction: column;
+            text-align: center;
+            color: #fff;
+        }
+        span.icon{
+            height: 1.0625rem;
+            line-height: 1.0625rem;
+            font-size: .625rem;
+        }
+        .txt{
+            height: .3125rem;
+            line-height: .3125rem;
+            font-size: .1875rem;
+        }
+    </style>
+    <script>
+        (function(){
+            console.log(1);
+            var dpr, rem, scale;
+            var docEl = document.documentElement;
+            var fontEl = document.createElement('style');
+            var metaEl = document.querySelector('meta[name="viewport"]');
+            dpr = window.devicePixelRatio || 1;
+            scale = 1 / parseInt(dpr);
+            rem = docEl.clientWidth * parseInt(dpr) / 10;
+            // 设置viewport，进行缩放，达到高清效果
+            metaEl.setAttribute('content', 'width=' + Number(parseInt(dpr) * docEl.clientWidth) + ',initial-scale=' + scale + ',maximum-scale=' + scale + ',minimum-scale=' + scale + ',user-scalable=no');
+            // 设置data-dpr属性，留作的css hack之用
+            docEl.setAttribute('data-dpr', parseInt(dpr));
+            // 设置html的字体
+            var fon = 'font-size:' + rem + 'px';
+            docEl.setAttribute('style',fon );
+            // 动态写入样式
+            // docEl.firstElementChild.appendChild(fontEl);
+            // fontEl.innerHTML = 'html{font-size:' + rem + 'px!important;}';
+            // 给js调用的，某一dpr下rem和px之间的转换函数
+            window.rem2px = function(v) {
+                v = parseFloat(v);
+                return v * rem;
+            };
+            window.px2rem = function(v) {
+                v = parseFloat(v);
+                return v / rem;
+            };
+            window.dpr = dpr;
+            window.rem = rem;
+        })()
+    </script>
+</head>
+<body>
+    <div class="warp">
+        <header class="hd"></header>
+        <div class="box">
+            <!-- br*100 -->
+        </div>
+        <footer class="ft">
+            <span class="btn">
+                <span class="icon iconfont">&#xe601;</span>
+                <span class="txt">猫咪</span>
+            </span>
+            <span class="btn">
+                <span class="icon iconfont">&#xe608;</span>
+                <span class="txt">狗</span>
+            </span>
+            <span class="btn">
+                <span class="icon iconfont">&#xe611;</span>
+                <span class="txt">猫爪</span>
+            </span>
+            <span class="btn">
+                <span class="icon iconfont">&#xe60d;</span>
+                <span class="txt">狗爪</span>
+            </span>
+            <span class="btn">
+                <span class="icon iconfont">&#xe60f;</span>
+                <span class="txt">狗头</span>
+            </span>
+        </footer>
+    </div>
+</body>
+</html>

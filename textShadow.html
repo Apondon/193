@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        .h1{
+            /* x轴偏移  y轴偏移  模糊度  颜色*/
+            /* text-shadow: 3px 4px 10px orangered; */
+
+            /* 0-9 a-f #0ab12f #000000-> #000  #aabbcc ->#abc*/
+            /* text-shadow: 3px 4px 10px #123456; */
+            /* rgb(0-255,0-255,0-255) */
+            /* text-shadow: 3px 4px 10px rgb(53, 143, 233); */
+            /* rgba(0-255,0-255,0-255,0-1)  0.1 -> .1 0-1透明度 0完全透明 1不透明*/
+            /* text-shadow: 3px 4px 10px rgba(53, 143, 233,.7); */
+           
+            /* HSL(色相0-360, 饱和度, 亮度) */
+            /* text-shadow: 3px 4px 10px HSL(30,70%,50%); */
+            /* HSLA(色相0-360, 饱和度, 亮度,透明度0-1) */
+            text-shadow: 3px 4px 10px HSLA(30,70%,50%,.8);
+
+        
+        }
+        /* @font-face引入自定义文字到网页中 */
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./font/iconfont.eot');
+            src: url('./font/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('./font/iconfont.woff2') format('woff2'),
+                url('./font/iconfont.woff') format('woff'),
+                url('./font/iconfont.ttf') format('truetype'),
+                url('./font/iconfont.svg#iconfont') format('svg');
+        }
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 40px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1 class="h1">这是一些字</h1> -->
+    <h1 class="h1 iconfont">
+        &#xe601; &#xe602;&#xe603;&#xe604;&#xe605;&#xe606;&#xe608;
+        &#xe609;&#xe60a;&#xe60b;&#xe60e;&#xe613;&#xe614;
+    </h1>
+</body>
+</html>

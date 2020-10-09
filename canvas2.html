@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myCanvas{
+            border:1px solid;
+            /* color:rgb(219, 32, 69); */
+        }
+    </style>
+</head>
+<body>
+    <canvas id='myCanvas' width="1000px" height="500px"></canvas>
+</body>
+<script>
+    var myCanvas = document.getElementById('myCanvas')
+    var ctx = myCanvas.getContext('2d')
+    // 插入图片
+    var img = new Image()
+    img.src = './timg.jpg'
+    img.onload = function(){
+        ctx.drawImage(img,0,0,500,300)
+    }
+    /*
+    //渐变
+    // 设置渐变开始结束位置
+    // 径向渐变
+    // var rgt = ctx.createRadialGradient(10,10,20,20,20,30) //参数 x1,y1,r1,x2,y2,r2
+    // 线性渐变
+    var lgt = ctx.createLinearGradient(10,10,100,100)  // 参数 x1,y1,x2,y2   
+    // 设置渐变过程中的颜色变化值
+    lgt.addColorStop(0,'red')
+    lgt.addColorStop(0.5,'orange')
+    lgt.addColorStop(1,'blue')
+    // 将渐变色保存到填充色中
+    ctx.fillStyle = lgt
+    // 移动
+    ctx.translate(100,50) //移动方向 x,y
+    ctx.fillRect(10,10,100,100)
+    // 缩放
+    ctx.scale(0.5,0.5) // x 延x轴方向缩放   y 延y轴方向缩放
+    ctx.fillRect(200,10,100,100)
+    // 旋转
+    ctx.rotate(45)
+    ctx.fillRect(300,10,100,100)
+    */
+    /*
+    //曲线
+    ctx.strokeStyle = 'cadetblue'
+    ctx.beginPath()
+    ctx.arc(200,200,50,Math.PI,2*Math.PI,true) //顺时针曲线
+    ctx.stroke()
+    ctx.closePath()
+
+    ctx.beginPath()
+    ctx.arc(300,300,50,Math.PI,2*Math.PI,false) // 逆时针曲线
+    ctx.stroke()
+    ctx.closePath()
+    */
+    /*
+    // 圆
+    ctx.strokeStyle = 'cadetblue'
+    ctx.arc(200,200,50,0,2*Math.PI,true)
+    ctx.stroke()
+    */
+    /*
+    // 文字
+    ctx.strokeStyle = 'cadetblue'
+    ctx.font = "100px 黑体"
+    ctx.strokeText('canvas',100,100) //空心
+
+    ctx.fillStyle = 'rgb(219, 32, 69)'
+    ctx.fillText('canvas',300,300) //实心
+    */
+    /*
+    // 方块
+    ctx.strokeStyle = 'red'
+    ctx.strokeRect(10,10,100,200) //空心
+
+    ctx.fillStyle = 'yellow'
+    ctx.fillRect(110,110,100,50) //实心
+    */
+</script>
+</html>

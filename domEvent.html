@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: gold;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="alert('点击了第一个div')">单击</div>
+    <div onmousemove="console.log('移动了')">鼠标移动</div>
+    <div ondblclick="alert('双击第三个div')">双击</div>
+
+    <label for="">
+        键按下
+        <input type="text" name="" id="" onkeydown="alert('键按下了')">
+    </label>
+    <br>
+    <label for="">
+        键弹起
+        <input type="text" name="" id="" onkeyup="alert('键松开了')">
+    </label>
+    <br>
+    <label for="">
+        获得焦点 focus
+        <input type="text" name="" id="" onfocus="console.log('获得焦点')">
+    </label>
+    <br>
+    <label for="">
+        失去焦点 blur
+        <input type="text" name="" id="" onblur="alert('失去焦点')">
+    </label>
+    <br>
+    <label for="">
+        发生变化 change
+        <input type="text" name="" id="" onchange="console.log('发生变化')">
+    </label>
+</body>
+</html>

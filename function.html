@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 函数参数
+    // 在定义函数时候传入的参数 叫做函数的形参  形式参数
+    // function fn(a,b,c){ // a,b,c 是函数的形参
+    //     // 形参在使用时候直接写参数名即可
+    //     console.log(a)
+    //     console.log(b)
+    //     console.log(c)
+    // }
+    // fn(1,2,3) // 函数在调用时候传入的参数叫做实参 实际参数 代表函数执行时候使用的具体值
+
+    // return 关键字
+    // function fn(a,b){
+    //     a+b
+    // }
+    // function fn(a,b){
+    //     return a+b
+    // }
+
+
+    // 例子
+    // foo是一个执行函数
+    // function foo(){
+    //     // console.log('foo')
+    //     // bar用来返回结果
+    //     function bar(a,b){
+    //         return a+b
+    //     }
+    //     // 变量c用来保存 函数bar的执行结果
+    //     var c = bar(1,2)
+    //     // 打印变量c
+    //     console.log(c)
+    // }
+    // 使用递归实现输出斐波那契数列第n项的值
+    // 1 1 2 3 5 8 13 21 34 55 89 144 233 377
+    // function fubncci(n){
+    //     if(n==1||n==2) return 1
+    //     return fubncci(n-1)+fubncci(n-2)
+    // }
+
+
+    // 函数执行顺序以及作用域
+    var g = 'a'
+    function a(){
+        console.log(g)
+        var ina = 1
+        function b(){
+            console.log(ina) // 1
+            console.log(g)
+            var inb = 2
+            function c() {
+                console.log(inb) // 2
+                var inc = 3
+            } 
+            c()
+        } 
+        b()
+        console.log(inc) // 3
+    }
+    a() // 1 2 3
+</script>
+</html>

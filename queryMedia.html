@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding: 0;}
+        html,body{width:100%;height: 100%;}
+
+        /* 小于某宽度 */
+        @media screen and (max-device-width:800px) {
+            body{
+                color:red;
+            }
+        }
+        /* 大于某宽度 */
+        @media screen and (min-device-width:1200px) {
+            body{
+                color:blue;
+            }
+        }
+        /* 两个宽度之间 */
+        @media screen and (min-device-width:800px) and (max-device-width:1200px) {
+            body{
+                color:green;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>媒体查询</h1>
+</body>
+</html>

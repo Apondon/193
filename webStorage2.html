@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var o = {
+        name:'张三',
+        age:10,
+        graduated:false
+    }
+    // localStorage.setItem('o',o)  // [object Object]
+    // document.write(localStorage.getItem('o')) // [object Object]
+    localStorage.setItem('o',JSON.stringify(o))
+    // document.write(localStorage.getItem('o'))
+    // document.write(typeof localStorage.getItem('o'))
+    console.log('不解析')
+    console.log(localStorage.getItem('o'))
+    console.log('parse')
+    console.log(JSON.parse(localStorage.getItem('o')))
+    console.log('eval')
+    console.log(eval('('+localStorage.getItem('o')+')'))
+</script>
+</html>

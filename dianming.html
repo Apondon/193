@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="dianming()">点名</button>
+    <!-- 显示当前点名同学 -->
+    <h1 id="nameBox"></h1>
+    <!-- 显示已点过名的同学 -->
+    <p id="dianguole"></p>
+</body>
+<script>
+   
+    /* 将点名次数和点名的数组放在全局环境下，保证所有的函数都可以访问到这两个值
+    */ 
+    // 定义一个变量保存点名的次数
+    var time = 0
+     // 获取名单
+    var mingdan = ["曾珍","仇冉冉","董耀会","樊前通","付鑫倩","付伊兵","龚家顺","郭龙飞","郭小龙","郭子民","焦攀龙","靳国庆","李太亲","李忠旺","刘晶晶","刘一鸣","鲁松赫","马春雨",
+                    "欧尊严","潘瑾瑾","秦庚尧","任梦阳","尚磊","司清晨","孙静","唐倩","田殊娟","王志杰","吴冰柯","吴建华","吴志伟","许思雨","张豪","张强","张思伟","张焱","赵文雅",
+                    "赵学宇","赵雪华","周志伟","朱梦豪","左婷婷","郭荣晨","惠龙锦","李帅斌","王玉泽","张贺祥","周雪风","吴娜娜","朱庆","李克强","周世祥","刘海天","生杰贵","孟凡博","张聪"]
+    
+    console.log(mingdan.length)
+    // 获取点过名的同学 
+    var choosed = localStorage.getItem('dianguodetongxue') || '' // 容错
+    document.getElementById('dianguole').innerText = choosed
+    // 如果点过名的同学的字符串不为空
+    if(!!choosed){
+        // 将点过名同学分割为一个数组
+        var arr = choosed.split(',')
+        console.log(arr)
+        for(let i=0;i<arr.length;i++){
+            for(let j=0;j<mingdan.length;j++){
+                if(arr[i] == mingdan[j]){
+                    mingdan.splice(j,1)
+                    break;
+                }
+            }
+        }
+    }
+    console.log(mingdan.length)
+    // 将生成名字的代码单独放进一个全局函数中，并把执行结果返回，可以让其他的函数访问到随机生成的名字值
+    // 从数组中随机选出一个名字
+    function giveName(){
+        // 生成随机数 因为数组中元素下标从 0 开始 所以向下取整
+        var num = Math.floor(Math.random()*mingdan.length)
+        // 从数组中选择和数字相同的 下标 所对应的名字
+        // console.log(mingdan[num])
+        var name = mingdan[num]
+        // // 福利 跳过某同学的名字
+        // if(name == dianming[5]){ // 如果生成的名字和需要跳过的同学的名字相同
+        //     console.log(name)
+        //     name = giveName() //使用递归方法调用函数本身，返回一个新的名字
+        // }
+        // 将生成的名字返回到函数外，供其他的变量使用
+        return name
+    }
+    function dianming(){
+        // 点击一次点名按钮，点名次数 +1
+        // // 坑人 增加某同学的点名权重
+        // ++time;
+        // // // 对次数进行取余数
+        // if(time%2==0){  // 若次数可以被2整除
+        //     var ele = document.getElementById('nameBox')
+        //     // 更改元素内显示的内容
+        //     ele.innerText =  mingdan[10]
+        //     // 终止该语句之后的代码执行
+        //     return false
+        // }
+        // 保存选出的名字
+        var name = giveName()
+        // 找到显示名字的元素
+        var ele = document.getElementById('nameBox')
+        // 更改元素内显示的内容
+        ele.innerText =  name
+        // 获取显示点过名同学的元素
+        var ele1 = document.getElementById('dianguole')
+        // 获取该元素内的内容
+        var str = ele1.innerText
+        
+        // 将当前被点的名字和已经点过的名字做比较，判断是否被点过名
+        // 如果已经点过了，则提示
+        if(str.includes(name)) alert('点过了！');
+        // 若未点过名，则显示在已点过名同学的元素中
+        else {
+            for(let j=0;j<dianming.length;j++){
+                if(name == dianming[j]){
+                    dianming.splice(j,1);
+                    break;
+                }
+            }
+            ele1.innerText = str +',' +name
+            localStorage.setItem('dianguodetongxue',ele1.innerText)
+        }
+
+    }
+</script>
+
+</html>

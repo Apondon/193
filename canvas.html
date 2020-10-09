@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myCanvas{
+            border:1px solid;
+            /* color:cyan */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="1000px" height="500px"></canvas>
+</body>
+<script>
+    // 获取画布元素
+    var myCanvas = document.getElementById('myCanvas')
+    // 设置绘画场景
+    var ctx = myCanvas.getContext('2d')
+
+    // 设置画笔
+    ctx.strokeStyle = 'red'  //颜色
+    ctx.lineWidth = 5    // 粗细
+
+    // canvas坐标系从右上角开始，向右（x）向下 (y) 递增
+    
+    // 开始点
+    // ctx.moveTo(10,10)
+    // // 结束点
+    // ctx.lineTo(100,10)
+
+    // // 开始点
+    // ctx.moveTo(200,10)
+    // // 结束点
+    // ctx.lineTo(200,100)
+    
+
+    // // 开始点
+    // ctx.moveTo(150,10)
+    // // 结束点
+    // ctx.lineTo(200,100)
+    
+    //  // 开始点
+    // ctx.moveTo(220,200)
+    // // 结束点
+    // ctx.lineTo(230,210)
+    // ctx.lineTo(300,70)
+    // ctx.lineTo(270,10)
+
+    // 封闭三角形
+    // 开始点
+    // ctx.moveTo(220,200)
+    // // 结束点
+    // ctx.lineTo(220,400)
+    // ctx.lineTo(110,100)
+    // ctx.lineTo(220,200)
+
+    // 不封闭图形
+    // 开始点
+    ctx.moveTo(220,200)
+    // 结束点
+    ctx.lineTo(220,400)
+    ctx.lineTo(110,100)
+    ctx.lineTo(220,100)
+    // 设置填充色
+    ctx.fillStyle = 'cyan'
+    // 填色
+    ctx.fill()
+    // 作画
+    ctx.stroke()
+    
+</script>
+</html>

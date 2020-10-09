@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;padding: 0;
+        }
+        html,body{
+            width: 100%;height: 100%;
+        }
+        .warp{
+            width: 800px;
+            height: 600px;
+            background: lightgray;
+
+            position: absolute;
+            left: 0;top: 0;right: 0;bottom: 0;
+            margin: auto;
+
+            column-count: 3;
+
+        }
+        .titl{
+            height: 80px;
+            column-span: all;
+            /* background: lightgreen; */
+        }
+        .cl1 , .cl2 , .cl3{
+            height: 520px;
+        }
+        .h1 , .h3{
+            text-align: center;
+            color: dodgerblue;
+        }
+
+        .ft{
+            font-size: 14px;
+        }
+        .lt-img{
+            width: 100%;
+        }
+        .tit{
+            width: 200px;
+            height: 60px;
+            line-height: 60px;
+            background: dodgerblue;
+            color: #fff;
+        }
+
+        .lt , .rt{
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .lt{
+            padding-right: 50%;
+            background: url(./timg.jpg) no-repeat right center;
+            background-size: 50% 100%;
+        }
+        .rt{
+            padding-left: 50%;
+            background: url(./timg.jpg) no-repeat left center;
+            background-size: 50% 100%;
+        }
+        .rt-img{
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div class="titl">
+            <h1 class="h1">字比较大的标题</h1>
+            <h3 class="h3">字比较小的标题</h3>
+        </div>
+        <div class="cl1">
+            <p class="ft">
+                国庆一般指国庆节。国庆节是由一个国家制定的用来纪念国家本身的法定假日。它们通常是这个国家的独立、宪法的签署、元首诞辰或其他有重大纪念意义的周年纪念日；也有些是这个国家守护神的圣人节。虽然绝大部分国家都有类似的纪念日
+            </p>
+            <img src="./timg.jpg" alt="" class="lt-img">
+            <h3 class="tit">小标题</h3>
+            <p class="ft">
+                国庆一般指国庆节。国庆节是由一个国家制定的用来纪念国家本身的法定假日。它们通常是这个国家的独立、宪法的签署、元首诞辰或其他有重大纪念意义的周年纪念日；也有些是这个国家守护神的圣人节。虽然绝大部分国家都有类似的纪念日
+            </p>
+        </div>
+        <div class="cl2">
+            <h3 class="tit">小标题</h3>
+            <p class="lt">
+                国庆一般指国庆节。国庆节是由一个国家制定的用来纪念国家本身的法定假日。它们通常是这个国家的独立、宪法的签署、元首诞辰或其他有重大纪念意义的周年纪念日；也有些是这个国家守护神的圣人节。虽然绝大部分国家都有类似的纪念日
+            </p>
+            <p class="rt">
+                国庆一般指国庆节。国庆节是由一个国家制定的用来纪念国家本身的法定假日。它们通常是这个国家的独立、宪法的签署、元首诞辰或其他有重大纪念意义的周年纪念日；也有些是这个国家守护神的圣人节。虽然绝大部分国家都有类似的纪念日
+            </p>
+        </div>
+        <div class="cl3">
+            <img src="./timg.jpg" alt="" class="rt-img">
+            <h3 class="tit">小标题</h3>
+            <p class="ft">
+                国庆一般指国庆节。国庆节是由一个国家制定的用来纪念国家本身的法定假日。它们通常是这个国家的独立、宪法的签署、元首诞辰或其他有重大纪念意义的周年纪念日；也有些是这个国家守护神的圣人节。虽然绝大部分国家都有类似的纪念日
+            </p>
+            <img src="./timg.jpg" alt="" class="rt-img">
+        </div>
+    </div>
+</body>
+</html>

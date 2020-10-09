@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{ width: 100%;height: 100%; }
+        /* 根选择器 */
+        /* :root{ background: darkturquoise; } */
+
+        /* 选中第一个元素 */
+        /* p:first-child{ background: darkturquoise;} */
+
+        /* 选中最后一个元素 */
+        /* p:last-child{ background: darkturquoise;} */
+
+        /* 唯一子元素 */
+        /* p:only-child{ background: darkcyan; } */
+
+        /* 某一元素下的唯一该类元素 */
+        /* span:only-of-type{ background-color: darkcyan; } */
+
+        /* 排除某元素 */
+        /* p:not(:first-child){ background-color: darkcyan;} */
+        /* p:not(:last-child){ background-color: darkcyan;} */
+
+        /* 选中空元素 */
+        /* p:empty{ width: 100%; height: 30px; background: darkcyan;} */
+
+        /* 使用下标查找元素 */
+        p:nth-child(2){ background: darkcyan; }
+    </style>
+</head>
+<body>
+    <!-- 选中第一个或者最后一个元素 -->
+    <!-- <p>1</p>
+    <p>2</p>
+    <p>3</p> -->
+
+    <!-- 唯一子元素 -->
+    <!-- <div>
+        <p>1</p>
+    </div>
+    <div>
+        <p>2</p>
+        <p>3</p>
+    </div> -->
+
+
+    <!-- 某一元素下的唯一该类元素 -->
+    <!-- <div>
+        <p>1</p>
+    </div>
+    <div>
+        <p>2</p>
+        <span>3</span>
+        <p>4</p>
+    </div> -->
+
+    <!-- 排除某元素 -->
+    <!-- <p>1</p>
+    <p>2</p>
+    <p>3</p> -->
+
+    <!-- 选中空元素 -->
+    <!-- <p>1</p>
+    <p></p>
+    <p>2</p> -->
+
+
+    <!-- 使用下标查找元素 -->
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+</body>
+</html>

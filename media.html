@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 如果浏览器不支持 audio和video标签 会将其当成普通标签来解析 -->
+    <!-- 音频 -->
+    <audio src="./周深 - 起风了.flac" controls="controls">
+        浏览器不支持h5 请升级浏览器
+    </audio>
+
+    <!-- 视频 -->
+    <!-- autoplay="autoplay" 自动播放 -->
+    <!-- loop 循环播放 -->
+    <!-- <video src="./oceans-clip.mp4"  
+        controls="controls" 
+        loop="true"
+        oncanplay="console.log('可以播放')"
+        onplay="console.log('开始播放')"
+        onpause="console.log('暂停')"
+        >
+        浏览器不支持h5 请升级浏览器
+    </video> -->
+
+    <video src="./oceans-clip.mp4"  controls="controls" id="myVideo"></video>
+    <input type="button" value="跳过片头" onclick="jumpStart()">
+    <input type="button" value="跳过片尾" onclick="jumpEnd()">
+</body>
+<script>
+    // 找到视频播放的元素
+    var myVideo = document.getElementById('myVideo')
+    // dom 2级事件绑定
+    // myVideo.addEventListener('play',function(){
+    //     console.log('开始播放')
+    // },false)
+    myVideo.addEventListener('pause',function(){
+         // 获取当前加载的媒体文件的地址
+        var cs = myVideo.currentSrc
+        console.log(cs)
+        // 获取当前媒体文件的播放时长
+        var d = myVideo.duration
+        console.log(d)
+        // 获取当前媒体文件的播放音量
+        var v = myVideo.volume
+        console.log(v)
+
+        // 获取当前播放时间
+        var ct = myVideo.currentTime
+        console.log(ct)
+    },false)
+    // 获取自动播放属性
+    var ap = myVideo.autoplay
+    console.log(ap)
+    // 循环属性
+    var lp = myVideo.loop
+    console.log(lp)
+
+    // 跳过片头
+   function jumpStart(){
+    myVideo.currentTime = 10
+   }
+    // 跳过片尾   
+   function jumpEnd(){
+     myVideo.currentTime = myVideo.duration
+   }
+   // 定时器
+   var timmer = setInterval(function(){
+       if(myVideo.currentTime>myVideo.duration/2){
+            myVideo.pause()
+           console.log('广告')
+            //清除定时器    
+           clearInterval(timmer)
+           guanggao()
+       }
+   },1000)
+   // 广告
+   function guanggao(){
+       alert('广告')
+   }    
+</script>
+</html>

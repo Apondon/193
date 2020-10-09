@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ margin:0;padding: 0;}
+        /* 验证输入内容 */
+        /* 合法 */
+        .eml:valid{ background: lightgreen;}
+        /* 不合法 */
+        .eml:invalid{ background: lightpink;}
+
+        /* 验证数字是否在范围内 */
+        /* 范围内 */
+        .nbr:in-range{ background: lightgreen;}
+        /* 范围外 */
+        .nbr:out-of-range{ background: lightpink;}
+
+        /* 选择是否被禁用的表单 */
+        /* 禁用 */
+        .txt:disabled{ background: lightpink; }
+        /* 可用 */
+        .txt:enabled{ background: lightgreen; }
+        /* 选中必填元素 */
+        /* 必填 */
+        .rqd:required{ background: lightgreen; }
+        /* 选中的表单 */
+        .ckb:checked{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+     邮箱 email  <input type="email" class="eml">    <br>
+     数字 number <input type="number" class="nbr" min="0" max="5">   <br>
+     文本 text <input type="text" class="txt"> 禁用 <input type="text" disabled="disabled" class="txt"> <br>
+     必填项 required <input type="text" required="required" class="rqd"> 非必填 <input type="text" class="rqd"> <br>
+     复选 checkbox <label for="ckb1"><input type="checkbox" class="ckb" id="ckb1"> 选项1 </label> <input type="checkbox" class="ckb"> 选项2
+</body>
+</html>

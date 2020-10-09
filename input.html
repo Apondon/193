@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <!-- 基本文本输入 -->
+        <input type="text" name="" id="text" onfocus="console.log('focus')" onblur="console.log('blur')" onchange="console.log('change')">
+        <br>
+        <!-- 密码输入框 -->
+        <input type="password" name="" id="password">
+        <br>
+        <!-- 复选框 -->
+        <input type="checkbox" name="" id="checkbox">
+        <br>
+        <!-- 单选框 -->
+        <input type="radio" name="aaa" id="">
+        <input type="radio" name="aaa" id="">
+        <input type="radio" name="aaa" id="">
+        <input type="radio" name="bbb" id="">
+        <input type="radio" name="bbb" id="">
+        <br>
+        <!-- 单选题 -->
+        单选
+        <br>
+        <!-- 使用label标签来扩大选区 -->
+        <label for="A">
+            <input type="radio" name="danxuan" id="A"> A
+        </label>
+        <label for="C">
+            <input type="radio" name="danxuan" id="B"> B
+        </label>
+        <label for="B">
+            <input type="radio" name="danxuan" id="C"> C
+        </label>
+        <br>
+        <!-- 下拉 -->
+        <select name="" id="sele">
+            <option value="bj">北京</option>
+            <option value="sh">上海</option>
+            <option value="gz">广州</option>
+        </select>
+        <!-- 文本域 -->
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <br><br><br><br><br><br><br>
+
+        <!-- h5 -->
+        数字<input type="number" name="" id="">
+        <br>
+        email<input type="email" name="" id="">
+        <br>
+        url <input type="url" name="" id="">
+        <br>
+        控制条 <input type="range" name="" id="">
+        <br>
+        取色板 <input type="color" name="" id="">
+        <br>
+        <!-- 时间相关 -->
+        <!-- 小时：分钟 -->
+        time <input type="time" name="" id="">  <br>
+        <!-- 年月日 -->
+        datetime <input type="datetime" name="" id="">  <br>
+        date <input type="date" name="" id=""> <br>
+        <!-- 年月日 小时：分钟 -->
+        datetime-local <input type="datetime-local" name="" id="">  <br>
+        <!-- 年月 -->
+        month <input type="month" name="" id="">  <br>
+        <!-- 年 星期 -->
+        week <input type="week" name="" id="">  <br>
+
+        <!-- 按钮 -->
+        <input type="button" value="按钮" onclick="getValue()">
+        <!-- 重置 reset -->
+        <input type="reset" value="重置">
+    </form>  
+</body>
+<script>
+    function getValue(){
+        // 查找到元素
+        // var txt = document.getElementById('text').value
+        // console.log('txt')
+        // console.log(txt)
+        // var pwd = document.getElementById('password').value
+        // console.log(pwd)
+        // var ckb = document.getElementById('checkbox').value
+        // console.log(ckb)
+
+        var sele = document.getElementById('sele').value
+        console.log(sele)
+    }
+</script>
+</html>

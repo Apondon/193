@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // sessionStorage
+    // 增
+    sessionStorage.setItem('aaa','我是aaa')
+    document.write(sessionStorage.getItem('aaa'))
+    // 改
+    sessionStorage.setItem('aaa','我不是aaa')
+    // 查
+    document.write(sessionStorage.getItem('aaa'))
+    // 删
+    sessionStorage.setItem('aaa1','我是aaa1')
+    sessionStorage.setItem('aaa2','我是aaa2')
+    sessionStorage.setItem('aaa3','我是aaa3')
+    sessionStorage.setItem('aaa4','我是aaa4')
+    sessionStorage.setItem('aaa5','我是aaa5')
+    // 删一个
+    // sessionStorage.removeItem('aaa1')
+    // 删全部
+    sessionStorage.clear()
+
+    // localStorage
+    // 增
+    localStorage.setItem('bbb','我是bbb')
+    document.write(localStorage.getItem('bbb'))
+    // 改
+    localStorage.setItem('bbb','我是aaabbb')
+    // 查
+    document.write(localStorage.getItem('bbb'))
+
+    //  // 删
+    localStorage.setItem('bbb1','我是bbb1')
+    localStorage.setItem('bbb2','我是bbb2')
+    localStorage.setItem('bbb3','我是bbb3')
+    localStorage.setItem('bbb4','我是bbb4')
+    localStorage.setItem('bbb5','我是bbb5')
+    // // 删一个
+    // localStorage.removeItem('bbb1')
+    // // 删全部
+    localStorage.clear()
+    
+</script>
+</html>

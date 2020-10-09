@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./font/iconfont.eot');
+            src: url('./font/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('./font/iconfont.woff2') format('woff2'),
+                url('./font/iconfont.woff') format('woff'),
+                url('./font/iconfont.ttf') format('truetype'),
+                url('./font/iconfont.svg#iconfont') format('svg');
+        }
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: .625rem;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        #hd{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height:1.375rem;
+            background: darkred;
+        }
+        #bd{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding:1.375rem 0;
+        }
+        .box{
+            width: 100%;
+            height: 100%;
+            background: cadetblue;
+            overflow-y: auto;
+        }
+        .item{
+            width: 1.5625rem;
+            height: 1.5625rem;
+            border: 1px solid;
+            margin:.0625rem;
+        }
+        #ft{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height:1.375rem;
+            background: darkred;
+            display: flex;
+        }
+        .btn{
+            color: #fff;
+            display: inline-block;
+            height: 100%;
+            line-height: 1.375rem;
+            text-align: center;
+            flex: 1;
+            /* width: 23.8%; */
+        }
+    </style>
+    <script>
+        (function(){
+            var dpr, rem, scale;
+            var docEl = document.documentElement;
+            var fontEl = document.createElement('style');
+            var metaEl = document.querySelector('meta[name="viewport"]');
+            dpr = window.devicePixelRatio || 1;
+            scale = 1 / parseInt(dpr);
+            rem = docEl.clientWidth * parseInt(dpr) / 10;
+            // 设置viewport，进行缩放，达到高清效果
+            metaEl.setAttribute('content', 'width=' + Number(parseInt(dpr) * docEl.clientWidth) + ',initial-scale=' + scale + ',maximum-scale=' + scale + ',minimum-scale=' + scale + ',user-scalable=no');
+            // 设置data-dpr属性，留作的css hack之用
+            docEl.setAttribute('data-dpr', parseInt(dpr));
+            // 设置html的字体
+            var fon = 'font-size:' + rem + 'px';
+            docEl.setAttribute('style',fon );
+            // 动态写入样式
+            // docEl.firstElementChild.appendChild(fontEl);
+            // fontEl.innerHTML = 'html{font-size:' + rem + 'px!important;}';
+            // 给js调用的，某一dpr下rem和px之间的转换函数
+            window.rem2px = function(v) {
+                v = parseFloat(v);
+                return v * rem;
+            };
+            window.px2rem = function(v) {
+                v = parseFloat(v);
+                return v / rem;
+            };
+            window.dpr = dpr;
+            window.rem = rem;
+        })()
+    </script>
+</head>
+<body>
+    <header id="hd"></header>
+    <section id="bd">
+        <div class="box">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+            <div class="item">10</div>
+            <div class="item">11</div>
+            <div class="item">12</div>
+            <div class="item">13</div>
+            <div class="item">14</div>
+            <div class="item">15</div>
+            <div class="item">16</div>
+            <div class="item">17</div>
+            <div class="item">18</div>
+            <div class="item">19</div>
+            <div class="item">20</div>
+            <div class="item">21</div>
+            <div class="item">22</div>
+            <div class="item">23</div>
+            <div class="item">24</div>
+            <div class="item">25</div>
+            <div class="item">26</div>
+            <div class="item">27</div>
+            <div class="item">28</div>
+            <div class="item">29</div>
+            <div class="item">30</div>
+            <div class="item">31</div>
+            <div class="item">32</div>
+            <div class="item">33</div>
+            <div class="item">34</div>
+            <div class="item">35</div>
+            <div class="item">36</div>
+            <div class="item">37</div>
+            <div class="item">38</div>
+            <div class="item">39</div>
+            <div class="item">40</div>
+            <div class="item">41</div>
+            <div class="item">42</div>
+            <div class="item">43</div>
+            <div class="item">44</div>
+            <div class="item">45</div>
+            <div class="item">46</div>
+            <div class="item">47</div>
+            <div class="item">48</div>
+            <div class="item">49</div>
+            <div class="item">50</div>
+            <div class="item">51</div>
+            <div class="item">52</div>
+            <div class="item">53</div>
+            <div class="item">54</div>
+            <div class="item">55</div>
+            <div class="item">56</div>
+            <div class="item">57</div>
+            <div class="item">58</div>
+            <div class="item">59</div>
+            <div class="item">60</div>
+            <div class="item">61</div>
+            <div class="item">62</div>
+            <div class="item">63</div>
+            <div class="item">64</div>
+            <div class="item">65</div>
+            <div class="item">66</div>
+            <div class="item">67</div>
+            <div class="item">68</div>
+            <div class="item">69</div>
+            <div class="item">70</div>
+            <div class="item">71</div>
+            <div class="item">72</div>
+            <div class="item">73</div>
+            <div class="item">74</div>
+            <div class="item">75</div>
+            <div class="item">76</div>
+            <div class="item">77</div>
+            <div class="item">78</div>
+            <div class="item">79</div>
+            <div class="item">80</div>
+            <div class="item">81</div>
+            <div class="item">82</div>
+            <div class="item">83</div>
+            <div class="item">84</div>
+            <div class="item">85</div>
+            <div class="item">86</div>
+            <div class="item">87</div>
+            <div class="item">88</div>
+            <div class="item">89</div>
+            <div class="item">90</div>
+            <div class="item">91</div>
+            <div class="item">92</div>
+            <div class="item">93</div>
+            <div class="item">94</div>
+            <div class="item">95</div>
+            <div class="item">96</div>
+            <div class="item">97</div>
+            <div class="item">98</div>
+            <div class="item">99</div>
+            <div class="item">100</div>
+        </div>
+    </section>
+    <footer id="ft">
+        <span class="btn iconfont">&#xe601</span>
+        <span class="btn iconfont">&#xe602;</span>
+        <span class="btn iconfont">&#xe603;</span>
+        <span class="btn iconfont">&#xe604;</span>
+    </footer>
+</body>
+</html>

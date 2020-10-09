@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding: 0;}
+        html,body{width: 100%;height: 100%;}
+        .div1{
+            width: 100px;height: 100px;position: absolute; background: blueviolet;
+            /* animation: 动画名 动画时间 动效曲线 延迟时间 执行次数 倒放*/
+            animation: anim1 4s cubic-bezier(0,1.49,.99,.89) 1s infinite alternate;
+            /* animation-name: anim1; */ /*动画名 */
+            /* animation-duration: 4s; */ /*动画时间 */
+            /* animation-timing-function: cubic-bezier(0,1.49,.99,.89); */ /* 动效曲线*/
+            /* animation-delay: 1s; */ /*延迟时间 */
+            /* animation-iteration-count: infinite; */ /* 执行次数 数字/infinite（无限次）*/
+            /* animation-direction: alternate; */ /* 倒放 */
+        }
+        /* 定义动画 动画名自定义 */
+        @keyframes anim1{
+            /* 动画过程 0% -> 100% */
+            0%{
+                left: 0; top: 0;
+            } /*动画开始*/
+            25%{
+                left: 200px; top: 0;
+            }
+            50%{
+                left: 200px; top: 200px;
+            }
+            75%{
+                left: 0; top: 200px;
+            }
+            100%{
+                left: 0; top: 0;
+            } /*动画结束*/
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+</body>
+</html>

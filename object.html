@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //    第一种创建对象方式  字面量  {}
+    // var person = {
+    //     name : '张三' ,
+    //     age  : 18    ,
+    //     sex  : '男'  ,
+    //     // sayHi: function(){
+    //     //     alert('hi')
+    //     // }
+    //     sayHi(){
+    //         alert('hi')
+    //     }
+    // }
+
+    //  第二种创建对象方式  new 操作符
+        // var person = new Object()
+        // person.name = '张三'
+        // person.sayName = function(){
+        //     alert('张三')
+        // }
+
+    //  第三种创建对象方式  工厂模式 
+    function createObj(name,age){
+        var obj = new Object()
+        obj.name = name
+        obj.age = age
+        obj.sayName = function(){
+            alert(this.name)
+        }
+        return obj
+    }
+    var a = createObj('张三',18)
+    var b = createObj('李四',19)
+    // a.sayName()
+    // b.sayName()
+    
+    // 对象属性的枚举 for in
+    // i 是对象的属性名  a是对象  a[i]是对象的属性值
+    for(let i in a){
+        console.log(i,a[i])
+    } 
+
+
+</script>
+</html>

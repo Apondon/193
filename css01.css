@@ -1,0 +1,73 @@
+#div1{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+}
+.div2{
+    width: 100px;
+    height: 100px;
+    background: tomato;
+}
+span{
+    color:red;
+}
+/* 父子元素 */
+div span{
+    color: violet;
+}
+.div3 span{
+    color: turquoise;
+}
+/* 权重 */
+/* 两个选择器控制同一个元素的同一个样式时，权重高的生效 */
+.div4{
+    background: forestgreen;
+}
+
+#div4{
+    background: gold;
+}
+/* 行内元素 */
+.spanInline{
+    width: 100px;
+    height: 100px;
+    background: hotpink;
+}
+/* 行块元素 */
+input{
+    width:220px;
+    height: 50px;
+    background: indianred;
+}
+/* 块级元素 */
+p{
+    width: 100px;
+    height: 100px;
+    background: lawngreen;
+}
+/* display属性 inline 行内  inline-block 行块 block 块级*/
+.testDisplay{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: lightblue;
+}
+
+/* 圆角 */
+.ridus{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+
+
+
+

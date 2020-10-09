@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom2</title>
+</head>
+<body>
+    <div id="myDiv" class="divClass" style="width: 100px;height: 100px;background: firebrick;">我是div</div>
+</body>
+<script>
+    // 通过class来获取元素
+    var findByClass = document.getElementsByClassName('divClass')[0]
+    console.log(findByClass)
+    // 通过id来获取元素
+    var findById = document.getElementById('myDiv')
+    console.log(findById)
+    // 通过tag来获取元素
+    var findByTag = document.getElementsByTagName('div')[0]
+    console.log(findByTag)
+
+    // 获取元素上的属性
+    console.log(findByClass.id) // id属性
+    console.log(findByClass.className) //class属性
+
+    console.log(findById.id) // id属性
+    console.log(findById.className) //class属性
+
+    console.log(findByTag.style) //获取元素样式
+    console.log(findByTag.style.height) //获取高度属性
+
+    console.log(findByTag.attributes) //获取所有属性
+    console.log(findByTag.getAttribute('class')) //获取单个属性
+    findByTag.setAttribute('class','divClass1') //设置单个属性
+    console.log(findByTag.getAttribute('class')) //获取单个属性
+</script>
+</html>

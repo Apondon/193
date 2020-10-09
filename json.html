@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // json 
+    var j = {
+        "zifuchuan" : "",
+        "buer" : true,
+        "shuzi" : 0 ,
+        "shuzu" : [],
+        "duixiang" : {
+            "shuxing1" : "1",
+            "shuxing2" : "2"
+        }
+    }
+    // 枚举数据  i 是json对象的数据名 j 是json对象  j[i] 是json对象每条数据的值
+    for(let i in j){
+        console.log(i,j[i])
+    }
+
+    // JSON.stringify() 将对象类型的json转换为字符串类型
+    var sify = JSON.stringify(j)
+
+    // JSON.parse()  将字符串类型的json转换为对象类型
+    var pase = JSON.parse(sify)
+
+    // eval() 将字符串类型的json转换为对象类型
+    var evl = eval( "("+ sify +")" )
+</script>
+</html>

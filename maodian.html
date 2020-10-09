@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>锚点</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100%;
+            height: 1000px;
+        }
+        .div1{
+            background: lightskyblue;
+        }
+        .div2{
+            background: limegreen;
+        }
+        .div3{
+            background: magenta;
+        }
+        /* 选中跳转的目标元素 */
+        div:target{
+            border:10px solid gold;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度</a>
+    <!-- <a href="./周深 - 起风了.flac" download="周深 - 起风了.flac">下载</a> -->
+    <a href="#div2">向下</a>
+    <div class="div1" id="div1"></div>
+    <a href="#div1">向上</a><a href="#div3">向下</a>
+    <div class="div2" id="div2"></div>
+    <a href="#div2">向上</a><a href="#div1">回div1</a>
+    <div class="div3" id="div3"></div>
+</body>
+</html>

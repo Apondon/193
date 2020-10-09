@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="myDiv" id="div1">
+            <div></div>
+            我是div1
+        </div>
+        <div class="myDiv">我是div2</div>
+        <div class="myDiv">我是div3</div>
+        <!-- <div class="myDiv4">我是div4</div> -->
+        <div class="myDiv5">我是div5</div>
+        <div class="super">
+            <div class="son"></div>
+            <span>我是span</span>
+        </div>
+        <input type="text" name="a">
+    </body>
+    <script>
+        
+        // 通过id来获取元素节点
+        console.log(document.getElementById('div1'))
+        // 通过class来获取元素节点
+        console.log(document.getElementsByClassName('myDiv'))
+        console.log(document.getElementsByClassName('myDiv')[0])
+        console.log(document.getElementsByClassName('myDiv')[1])
+        console.log(document.getElementsByClassName('myDiv')[2])
+        // 通过tag 来获取元素节点
+        console.log(document.getElementsByTagName('div'))
+        console.log(document.getElementsByTagName('div')[3])
+        console.log(document.getElementsByTagName('div')[4])
+        console.log(document.getElementsByTagName('div')[5])
+        // 通过name来获取元素节点
+        console.log(document.getElementsByName('a'))
+
+        // 获取元素
+        var myDiv = document.getElementById('div1') 
+        // 获取元素内的文本
+        console.log(myDiv.innerHTML) //可以获取到元素中的所有子节点
+        console.log(myDiv.innerText) // 只能获取元素中的文本节点
+    </script>
+</html>

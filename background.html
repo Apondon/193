@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        .div1{
+            width:100px;
+            height: 100px;
+            /* 单一背景色 */
+            /* background: red; */
+            /* 线性过渡背景色 */
+            /* background: linear-gradient(90deg,red,orange,yellow,cyan); */
+            /* 径向过渡背景色 */
+            background: radial-gradient(red,orange,yellow,cyan);
+        }
+        .div2{
+            width: 2000px;
+            height: 1000px;
+            padding: 100px;
+            border: 100px solid transparent;
+            /* 背景图片 */
+            background: url(./timg.jpg);
+            /* 背景重复 */
+            background-repeat: no-repeat;
+            /* 背景定位 */
+            /* background-position: 100px 50px; */
+            /* 背景尺寸 */
+            background-size: cover;
+            /* 背景剪裁 */
+            /* background-clip: content-box; */
+            /* 背景起点 */
+            background-origin: content-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+</body>
+</html>
